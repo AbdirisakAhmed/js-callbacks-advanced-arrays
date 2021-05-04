@@ -1,4 +1,5 @@
-// Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
+// Create a higher order function and invoke the callback function to test your work. 
+// You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
@@ -20,26 +21,79 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+// function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+function getLength(arr, cb){
+  return cb(arr)
 }
+function cb(arr){
+  return arr.length;
+}
+console.log(getLength(items , cb));
 
-function last(arr, cb) {
+
+// function last(arr, cb) {
   // last passes the last item of the array into the callback.
-}
+  const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+  function last(arr, cb){
+    return cb(arr)
+  }
+  function cb(arr){
+  
+  let last = items[items.length -1];
+   console.log("The Last Item is " + last)
+  }
+  console.log(last (items ,cb));
+//}
 
-function sumNums(x, y, cb) {
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
+// function sumNums(x, y, cb) {
+//   // sumNums adds two numbers (x, y) and passes the result to the callback.
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+function sumNums(x, y, cb){
+  return cb(x, y)
 }
+function cb(x, y){
 
-function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+return x + y;
 }
+console.log(sumNums (3,8 ,cb));
+// }
 
-function contains(item, list, cb) {
+// function multiplyNums(x, y, cb) {
+//   // multiplyNums multiplies two numbers and passes the result to the callback.
+function multiplyNums(x, y, cb){
+  return cb(x, y)
+}
+function cb(x, y){
+
+return x * y;
+}
+console.log(multiplyNums (2,6 ,cb));
+// }
+
+// function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+
+  const item = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+const list = ['Pencil', 'Notebook', 'yo-yo', 'Ball', 'Water' , 'Cement','Gum'];
+function contains(item, list, cb){
+  return cb(item, list)
 }
+function cb(item, list){
+  for (let i = 0 ; i < list.length; i++)
+   
+    if (item.indexOf(list[i]) >= 0){
+      console.log('True');
+    }
+  else{
+   console.log('False')
+  }
+}
+console.log(contains(item , list, cb));
+
+//}
 
 /* STRETCH PROBLEM */
 
